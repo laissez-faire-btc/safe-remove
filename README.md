@@ -41,12 +41,12 @@ Once this statement is established in the blockchain, any node can choose to del
 **Putting it all together**
 
 Here's some very loose pseudocode showing the steps to remove the objectionable content:
-1) write the following to the blockchain:
-1.a) the transaction (T) to be changed 
-1.b) the exact data (D) to be changed, specified by byte offset, and length (or multiple byte offsets, and lengths)
-1.c) the current hash (H) of T
-1.d) the new hash (H') of T, after D is changed
-1.e) for any signatures that sign D (for example, signatures in transaction inputs), the current hash (S) and the new hash (S') of that signed data (the signed data includes D, but the hash of the signed data is different to the hash of D, and different to the hash of T)
-2) miners and validators check that this represents a true statement about T, D, H, H', S, S', and the change is safe (e.g. it is arbitrary data, not structural), and it is written into a block
-3) a client sees this removal and chooses to use it, additionally confirming that the removal is valid and safe
-4) a client may further share this transaction or this block in future, in its altered state, along with the information necessary to validate it in its altered state (which will be found and can be confirmed later in the blockchain)
+1: write the following to the blockchain:
+1.a: the transaction (T) to be changed 
+1.b: the exact data (D) to be changed, specified by byte offset, and length (or multiple byte offsets, and lengths)
+1.c: the current hash (H) of T
+1.d: the new hash (H') of T, after D is changed
+1.e: for any signatures that sign D (for example, signatures in transaction inputs), the current hash (S) and the new hash (S') of that signed data (the signed data includes D, but the hash of the signed data is different to the hash of D, and different to the hash of T)
+2: miners and validators check that this represents a true statement about T, D, H, H', S, S', and the change is safe (e.g. it is arbitrary data, not structural), and it is written into a block
+3: a client sees this removal and chooses to use it, additionally confirming that the removal is valid and safe
+4: a client may further share this transaction or this block in future, in its altered state, along with the information necessary to validate it in its altered state (which will be found and can be confirmed later in the blockchain)
