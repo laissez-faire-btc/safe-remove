@@ -70,6 +70,13 @@ its altered state (which will be found and can be
 confirmed later in the blockchain)
 ```
 
+**Hard fork or soft fork?**
+I can see a few ways to implement this consensus change. The most straightforward is a new opcode, where we push the facts we want to verify onto the stack, and then the new opcode verifies that they meet the rules for what can be deleted, per this proposal. Much as how OP_RETURN just accepts data and moves on, this new opcode would do the same - but with the exception that we require the data to be well formed, and we require the implied statement about hashes to be true, or else the transaction is rejected.
+
+Slightly less obvious and slightly more interesting is the possibility of a soft fork. One way to do that is to use an arbitrary data field and assign meaning to that arbitrary data. For example, we might define a data format to represent a deletion statement. Then, any data that is a well-formed deletion statement is not allowed to contain false statements about transaction hashes. True statements are still allowed, as is any arbitrary data that does not conform to the definition of a well-formed deletion statement.
+
+Because this is purely a restriction on otherwise-acceptable transactions, this would be a soft fork.
+
 **FAQs**
 
 **Q1. Isn't this basically just Simplified Payment Verification / BIP 157 / Neutrino?**
