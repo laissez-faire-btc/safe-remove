@@ -4,5 +4,5 @@
 4. Included possible hard fork and soft fork option. 
 5. Removed the hard fork option, and provided additional details on the more realistic soft fork option, including data format. 
 6. Included a hypothetical worked example, including a simple deletion, that is validated and accepted by the network.
-7. Public domain licensed
+7. Public domain licensed. No Rights Reserved.
 8. [TODO] Changed terminology from "deletion" to "redaction".
