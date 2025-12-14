@@ -70,21 +70,21 @@ its altered state (which will be found and can be
 confirmed later in the blockchain)
 ```
 
-**Hard fork, soft fork**
+**Soft fork concept**
 
-I can see a few ways to implement this consensus change. The most straightforward is a new opcode, where we push the facts we want to verify onto the stack, and then the new opcode verifies that they meet the rules for what can be deleted, per this proposal. Much as how OP_RETURN just accepts data and moves on, this new opcode would do the same - but with the exception that we require the data to be well formed, and we require the implied statement about hashes to be true, or else the transaction is rejected.
+To implement this as a soft fork, by definition, we need to find a way to write this new data to the blockchain in a format that current nodes will accept, without understanding the new semantics. That's actually easy in this case, because this aligns with one of the design goals anyway: deletions are optional for nodes, and can be safely ignored.
 
-Slightly less obvious and slightly more interesting is the possibility of a soft fork. One way we might do that is to use an arbitrary data field and assign meaning to that arbitrary data. For example, we might define a data format to represent a deletion statement. Then, any data that is a well-formed deletion statement is not allowed to contain false statements about transaction hashes. True statements are still allowed, as is any arbitrary data that does not conform to the definition of a well-formed deletion statement.
+One way we might do that is to use OP_RETURN to store deletion statements. Then, any data that is a well-formed deletion statement is not allowed to contain false statements about transaction hashes. True statements are still allowed, as is any arbitrary data that does not conform to the definition of a well-formed deletion statement.
 
 Because this is purely a restriction on otherwise-acceptable transactions, this would be a soft fork.
 
 Here is a concrete example of how we might differentiate well formed deletion statements from other arbitrary data.
+
 ```
 <deletion-statement> ::= <uuid> <transaction-id> <data-segment-list> <transaction-hash-update> <signature-hash-update-list>
 ```
 
 Where loosely speaking:
-
 * `<deletion-statement>` = the entire contents of an op return output's data pushes
 * `<uuid>` = a specific 16 byte value used (only and always) to signify that this data is a deletion statement
 * `<transaction-id>` = the id of the transaction being modified
