@@ -2,7 +2,7 @@
 
 I propose two changes to Bitcoin, one at the consensus level, and one at the client level. The purpose of these changes is to support filtering of objectionable content after the content has been mined, allowing each node operator to maintain only that data they find agreeable. In so doing, my hope is that we can address all users' greatest concerns, for a true consensus resolution.
 
-I do however acknowledge those people that want to stop miners from mining non-monetary transactions, because of the data storage and processing cost, and I recognised that this proposal does nothing to address those concerns.
+I do however acknowledge those people that want to stop miners from mining non-monetary transactions, because of the data storage and processing cost, and I recognised that this proposal does not address those concerns.
 
 **Motivation**
 
@@ -125,3 +125,11 @@ Parts of the transaction that includes op codes or signatures. Changing these wo
 **Q8: Why do miners need to enforce the safety of deletions at the consensus level? Why not have miners accept all deletions, and leave it to nodes to decide what to accept?**
 
 If we do it at the consensus level, then future nodes may be able to accept deletions from peers (e.g. in initial block download) without ever having to hold the objectionable content - because they know that each deletion is only a data push, and the op code semantics of transactions haven't changed. If it's left to nodes to decide what's safe, then a node can't really accept a change from another node without seeing the original transaction first - because that change may have altered the semantics and the financial effect of the transaction.
+
+**Q9: To redact a 100,000 byte OP_RETURN, do you need a 100,000 byte redaction transaction?**
+
+No, redaction costs about 64 bytes *per signature*, regardless of how much data is changed in that signature's input data. The solution simply shows the signature hash value, both before and after applying the redaction. Then it's about 8 bytes of extra data for each non-contiguous chunk of data. For example, if a transaction had 100,000 bytes of objectionable data split across 200 data pushes, that would require about 1,600 bytes to precisely specify. Alternatively, you may be able to redact all of the data after OP_RETURN, including the PUSHDATA op codes. In that case, it costs only 8 bytes to specify. 
+
+**Q10: Can a node that has made redactions then share redacted blocks via initial block download? I.e. do they operate as a full archival node, capable of re-seeding the entire Bitcoin, if all other nodes fail?**
+
+Yes, redacted transactions are shareable, but only if the receiving node is happy to receive these redacted transactions, not the original. That's good for sharing with people who don't ever want the objectionable content landing on their device, and who share the same view of what's objectionable - eg for social, legal, moral, religious, economic or political reasons. And if there ever becomes a unanimous consensus about a bit of content, where 100% of nodes have redacted it (whether through armageddon taking it most nodes, or by everyone unanimously agreeing to redact something) then it will be permanently redacted for everyone, and it will never be available to anyone ever again. (Or course, in practice, you might expect the node it originated from to maintain it unredacted.)
