@@ -1,5 +1,10 @@
 # a safe way to remove objectionable content from the blockchain
 
+**Abstract**
+This is a proposal to enable the redaction of objectionable content from the blockchain. Each node can choose for themself what to redact, without trusting any third party. The proposal is available as a soft fork. Almost any data can be redacted from the blockchain, including historical data that pre-dates implementation of this proposal. Redacted blocks can be shared as part of initial block downloads, with peers that share the same view of objectionable content. In this sense, a node with a redacted blockchain can continue to operate as a archival node.
+
+**Motivation**
+
 I propose two changes to Bitcoin, one at the consensus level, and one at the client level. The purpose of these changes is to support filtering of objectionable content after the content has been mined, allowing each node operator to maintain only that data they find agreeable. In so doing, my hope is that we can address everyone's greatest concerns, for a consensus resolution.
 
 I do however acknowledge those people that want to stop miners from mining non-monetary transactions, because of the data storage and processing cost, and I recognised that this proposal does not address those concerns.
