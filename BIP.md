@@ -26,13 +26,23 @@ The elements of the Redaction Statement workflow (including writing, mining, con
 
 ## Motivation
 
+What problem does Safe Redaction address?
+
 ## Specification
+
+How does Safe Redaction work?
 
 ## Rationale
 
+Why is this the right solution to the redaction problem?
+
 ## Backward Compatibility
 
+How will existing nodes and existing blocks handle this?
+
 ## Reference Implementation
+
+Has this been implemented, in any way, shape or form?
 
 ## Changelog
 
