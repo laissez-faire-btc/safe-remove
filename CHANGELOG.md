@@ -6,3 +6,4 @@
 6. Included a hypothetical worked example, including a simple redaction, that is validated and accepted by the network.
 7. Public domain licensed. No Rights Reserved.
 8. Changed terminology from "deletion" to "redaction".
+9. Drafted BIP named "Safe Redaction" v0.0.0.
