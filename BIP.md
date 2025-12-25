@@ -1,7 +1,7 @@
 ```
   BIP: ?
   Layer: Consensus (soft fork)
-  Title: Redaction
+  Title: Safe Redaction
   Authors: Laissez Faire BTC <laissez.faire.btc@gmail.com>
   Status: Draft
   Assigned: ?
@@ -15,9 +15,9 @@
 
 ## Abstract
 
-This **Specification BIP** defines a new type of transaction output to enable nodes to safely and robustly redact specified content from the blockchain.
+This **Specification BIP** defines a new type of transaction output to enable nodes to safely and robustly redact specified data from the blockchain (within reason).
 
-Any participant MAY write a _Redaction Statement_ to the blockchain. A Redaction Statement specifies which data will be redacted from the blockchain, and exactly how to safely redact that data. Once this transaction is committed to the blockchain, any participant MAY apply the Redaction Statement to safely redact the specified content from their node.
+Any participant MAY write a _Redaction Statement_ to the blockchain. A Redaction Statement specifies which bytes of data will be redacted from the blockchain, and exactly how to safely redact those bytes. Once this transaction is committed to the blockchain, any participant MAY apply the Redaction Statement to safely redact the specified content from their node.
 
 Where two participants wish to redact the same content, redacted content can be shared between nodes, for example as part of an initial block download.
 
