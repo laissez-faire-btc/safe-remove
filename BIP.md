@@ -32,6 +32,8 @@ What problem does Safe Redaction address?
 * immoral and abhorrent content
 * information hazards
 
+* vast disparity of views
+
 ## Specification
 
 How does Safe Redaction work?
