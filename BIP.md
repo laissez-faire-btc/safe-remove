@@ -44,4 +44,5 @@ This BIP is in the public domain. No Rights Reserved.
 
 ## Related Work
 
-- []()
+- ["Redactable Blockchain in the Permissionless Setting", Deuber et al, 2019](https://arxiv.org/abs/1901.03206)
+- ["Redactable Blockchain: Comprehensive Review, Mechanisms, Challenges, Open Issues and Future Research Directions", Abd Ali et al, 2023](https://www.mdpi.com/1999-5903/15/1/35)
