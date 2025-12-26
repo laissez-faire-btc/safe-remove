@@ -65,6 +65,10 @@ This proposal doesn't impose any definition of objectionable content on anyone, 
 
 * even miners can apply redactions, which will help with global diversification and miner decentralisation
 
+**Concerns Raised**
+
+The rest of this section is reserved for sharing, discussing and addressing concerns about this BIP. You can help by sharing, discussing or addressing concerns - either on [the Discord server](https://discord.gg/DPXKfd9K3s), or on the mailing list.
+
 ## Backward Compatibility
 
 **How will activation work, and how will we know it has happened?**
