@@ -60,7 +60,7 @@ This BIP provides a means to redact objectionable content, with minimal impact, 
 
 **Why is this the right solution to the problem?**
 
-This proposal doesn't impose any definition of objectionable content on anyone, or any process in determining what should count as objectionable. This is entirely up to each individual to decide for themself.
+This proposal doesn't impose any definition of objectionable content on anyone, or any process for determining what should count as objectionable. This is entirely up to each individual to decide for themself.
 
 
 * even miners can apply redactions, which will help with global diversification and miner decentralisation
