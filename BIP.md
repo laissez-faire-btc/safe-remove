@@ -34,7 +34,7 @@ The elements of the Redaction Statement workflow (including writing, mining, con
 
 One of Bitcoin's greatest strengths is that it's permissionless, and it's uncensorable. But that can also be a bit of a problem.
 
-The status quo is this: if you want to get some data into the blockchain, there is no restriction. You just follow the rules, and you pay by the byte. But if you want to get some data removed, that's a hard fork. Now you need 51% of the miners to agree to a new rule: this specific data is not allowed in the blockchain; not now, and not ever. You'll need to roll back to the block before it was mined, too.
+The status quo is this: if you want to get some data into the blockchain, there is no restriction. You just follow the rules, and you pay by the byte, at market rates. But if you want to get some data removed, that's a hard fork. Now you need 51% of the miners to agree to a new rule: this specific data is not allowed in the blockchain; not now, and not ever. You'll need to roll back to the block before it was mined, too.
 
 People don't generally want to maximise the amount of arbitrary data they are holding on their nodes at other people's request, but (as of 2025) this is the only way to run a node. Take it or leave it. Bitcoin users are okay with this, because the benefits greatly outweigh the costs. 
 
