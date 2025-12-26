@@ -56,6 +56,8 @@ People don't generally want to maximise the amount of arbitrary data they are ho
 
 ## Backward Compatibility
 
+**How will activation work, and how will we know it has happened?**
+
 **How will existing nodes and existing blocks handle this?**
 
 ## Reference Implementation
