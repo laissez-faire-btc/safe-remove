@@ -55,6 +55,10 @@ An archival node can only be run by a person who is comfortable with this, and c
 
 **How does Safe Redaction work?**
 
+## Security Implications ##
+
+**What's the impact on security? What new attacks are possible, and can they be mitigated?**
+
 ## Rationale
 
 **Why is this the right solution to the problem?**
