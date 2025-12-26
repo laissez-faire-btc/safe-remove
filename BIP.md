@@ -46,6 +46,8 @@ People don't generally want to maximise the amount of arbitrary data they are ho
 
 * support for businesses (who in many countries are held to a higher standard than individuals)
 
+* even miners can apply redactions, which will help with global diversification and miner decentralisation
+
 ## Specification
 
 **How does Safe Redaction work?**
