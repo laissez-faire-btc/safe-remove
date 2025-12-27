@@ -79,8 +79,7 @@ If the signature verifies, it tells you some facts about exactly what happened i
 * the private key, that corresponds to the public key used during signature verification, was used to create the signature
 * the hash used during signature verification, was the hash used to create the signature
 
-Crucially, note that if you hold the hash
-
+Crucially, note that if you hold the hash and the public key, you can verify the signature without the original data. The reason we normally need the original data, is because it's normally the only way to verify that the statements made in the original data were committed to by the holder of the private key.
 
 , the signature data confirms that a hash of
 
