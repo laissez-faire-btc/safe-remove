@@ -76,7 +76,10 @@ How a signature is verified:
 
 If the signature verifies, it tells you some facts about exactly what happened in the original signing operation that created the signature data: 
 
-*
+* the private key, that corresponds to the public key used during signature verification, was used to create the signature
+* the hash used during signature verification, was the hash used to create the signature
+
+Crucially, note that if you hold the hash
 
 
 , the signature data confirms that a hash of
