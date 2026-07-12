@@ -61,3 +61,11 @@ Much like a transaction where you receive bitcoin, you may want to wait a few bl
 **Q12. Exactly which data envelopes for arbitrary data will this support? And if there's one it doesn't support, can this be extended later?**
 
 It's too soon to say, because there is a spectrum of complexity. At least OP_RETURN will be supported, and most likely some similar simple methods like inscriptions. On the other hand, it's possible to steganographically embed arbitrary data in public keys that are not revealed when used for outputs, but are later revealed when used in input signatures. Or those very public keys might include XOR-masked (simple encryption) arbitrary data to hide the objectionable content from view, while still making it extractable by those who know the scheme. At this end of the spectrum, these elements will probably never be supported for redaction. However, we don't need to decide this once and for all time. We can easily extend this solution later with a second soft fork, e.g. by using a new magic number (UUID) for the new redaction options.
+
+**Q13. Why do we need Safe Redaction when we have pruning? That already removes any objectionable content in OP_RETURN.**
+
+Pruning requires downloading the objectionable content, and it prunes way more than just the content you object to, and it stops your node being used for IBD, and it has other effects you might not want. Safe Redaction is a different option, not a replacement option.
+
+Under Safe Redaction, a new node can get a list of redacted content (which is untrusted and unverified metadata, publically available) before IBD. The redacted blocks they can get from someone who has redacted them. They can verify their authenticity / correctness by using the data in a redaction statement that is later in the blockchain. They can verify that redaction statement is valid without needing the redacted data because it's now under so much proof of work, having long been accepted by the network.
+
+See also Q10 above, about sharing redacted transactions.
