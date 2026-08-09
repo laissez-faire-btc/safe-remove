@@ -4,6 +4,8 @@
 
 This Specification BIP defines a new type of transaction output to enable nodes to safely and robustly redact objectionable content from the blockchain (within reason).
 
+Activation of this BIP is not urgent. Pre-existing data on the blockchain, that was mined before activation, can be redacted after activation.
+
 Any participant may write a _Redaction Statement_ to the blockchain. A Redaction Statement specifies which bytes of data will be redacted from the blockchain, and exactly how to safely redact those bytes. Once this is committed to the blockchain, any participant may apply the Redaction Statement to safely redact the specified content from their node.
 
 Where two participants wish to redact the same content, redacted data may be shared between nodes, in redacted form; for example, as part of an initial block download.
